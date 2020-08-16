@@ -40,6 +40,36 @@ For Github workflow to set the libraries, the **requirements.txt** file should b
 $ pip freeze > requirements.txt
 ```
 
+## Instructions
+
+### Step 1.
+
+Fork this repository.
+
+### Step 2.
+
+Click *Actions* tab in the forked repository.
+
+![demo](/instructions/inst1.jpg)
+
+### Step 3.
+
+Click *Python package* tab.
+
+![demo](/instructions/inst2.jpg)
+
+### Step 4.
+
+The settings values are written in the *workflow_settings.txt* file. You can just copy and paste them. Note that you must update your Git information in the file. 
+
+Or you can modify the settings.
+
+![demo](/instructions/inst3.jpg)
+
+After setting, commit the file. 
+
+Check if your scheduler runs without any error.
+
 
 ## Database
 
