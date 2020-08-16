@@ -16,7 +16,11 @@ NYSCEC3 gathers infomation of each course, and notifies using SMTP. The demo is 
 
 It is relatively easy to connect **/my** page(logging in) with the browser. The browser automatically generates encrypted parameter **E2** using Javascript, but pure Python script cannot do that. The process will be introduced in detail at the next section. 
 
-The full source contains private user ID and passwords, so the source will not be set as open repository. However, there will be another version of NYSCEC2, that does not require any database and that can be run with Github Actions, which will be opened.
+The full NYSCEC2 source contains private user ID and passwords, so the source will not be set as open repository. NYSCEC3 does not contain any personal information, thus a user should set some parameters before using. They are, 
+
+- config.py: Your YSCEC ID and password information.
+- smtp.py: Your SMTP service ID and password information.
+
 
 ## Requirements
 
