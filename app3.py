@@ -192,7 +192,7 @@ with requests.Session() as s:
             }
         )
 
-    # Gather instances and sub hrefs for each course    
+     # Gather instances and sub hrefs for each course    
     for course in course_info:
         res = s.get(course['base_href']) # base href
         soup = BeautifulSoup(res.text, 'html.parser')
@@ -205,10 +205,13 @@ with requests.Session() as s:
                 course['instances'].append(instance.text)                
                 sub_href = BeautifulSoup(
                         str(instance), 'html.parser'
-                    ).find('a', class_="").attrs['href']
+                    ).find('a', class_="")
+                
+                if sub_href != None:
+                    sub_href = sub_href.attrs['href']
 
-                if cf.NYSCEC_INSTANCE_TYPE_1[0] in sub_href:
-                    course['forum'].append({'name': instance.text, 'href': sub_href})
+                    if cf.NYSCEC_INSTANCE_TYPE_1[0] in sub_href:
+                        course['forum'].append({'name': instance.text, 'href': sub_href})
                 
                 del sub_href
 
